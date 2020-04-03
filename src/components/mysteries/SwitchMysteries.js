@@ -45,28 +45,33 @@ export default class SwitchMysteries extends Component {
             case 1:
               return (
                 <div className='mystery-container mtb-20px'>
-                  <h1>{todaysMystery.mysteryName} Mysteries</h1>
-                  <p>
-                    The first {todaysMystery.mysteryName} mystery is the{' '}
-                    {todaysMystery.firstMystery}.
-                  </p>
+                  <div className='mystery-header'>
+                    <h1>{todaysMystery.mysteryName} Mysteries</h1>
+                    <p>
+                      The first {todaysMystery.mysteryName} mystery is the{' '}
+                      {todaysMystery.firstMystery}.
+                    </p>
+                  </div>
+
                   <div className='instructions'>
                     <h3>For each mystery, we say: </h3>
                     <OurFather />
                     <TenHailMary />
                     <GloryBe />
                     <FatimaPrayer />
-                    <div className='flex-container'>
-                      <div>
+                    <div className='button-flex-container'>
+                      <div className='button-container'>
                         <button
                           onClick={this.previousMystery}
                           style={this.hidePreviousbutton()}
                         >
-                          Previous
+                          <i class='fas fa-chevron-circle-left'></i>Previous
                         </button>
                       </div>
-                      <div>
-                        <button onClick={this.nextMystery}>Next</button>
+                      <div className='button-container'>
+                        <button onClick={this.nextMystery}>
+                          Next<i class='fas fa-chevron-circle-right'></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -76,23 +81,33 @@ export default class SwitchMysteries extends Component {
             case 2:
               return (
                 <div className='mystery-container mtb-20px'>
-                  <h1>{todaysMystery.mysteryName} Mystery</h1>
-                  <p>
-                    The second {todaysMystery.mysteryName} mystery is the{' '}
-                    {todaysMystery.secondMystery}.
-                  </p>
+                  <div className='mystery-header'>
+                    <h1>{todaysMystery.mysteryName} Mystery</h1>
+                    <p>
+                      The second {todaysMystery.mysteryName} mystery is the{' '}
+                      {todaysMystery.secondMystery}.
+                    </p>
+                  </div>
+
                   <div className='instructions'>
-                    <p>For each mystery, we say: </p>
+                    <h3>For each mystery, we say: </h3>
                     <OurFather />
                     <TenHailMary />
                     <GloryBe />
                     <FatimaPrayer />
-                    <div className='flex-container'>
-                      <div>
-                        <button onClick={this.previousMystery}>Previous</button>
+                    <div className='button-flex-container'>
+                      <div className='button-container'>
+                        <button
+                          onClick={this.previousMystery}
+                          style={this.hidePreviousbutton()}
+                        >
+                          <i class='fas fa-chevron-circle-left'></i>Previous
+                        </button>
                       </div>
-                      <div>
-                        <button onClick={this.nextMystery}>Next</button>
+                      <div className='button-container'>
+                        <button onClick={this.nextMystery}>
+                          Next<i class='fas fa-chevron-circle-right'></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -102,23 +117,33 @@ export default class SwitchMysteries extends Component {
             case 3:
               return (
                 <div className='mystery-container mtb-20px'>
-                  <h1>{todaysMystery.mysteryName} Mystery</h1>
-                  <p>
-                    The third {todaysMystery.mysteryName} mystery is the{' '}
-                    {todaysMystery.thirdMystery}.
-                  </p>
+                  <div className='mystery-header'>
+                    <h1>{todaysMystery.mysteryName} Mystery</h1>
+                    <p>
+                      The third {todaysMystery.mysteryName} mystery is the{' '}
+                      {todaysMystery.thirdMystery}.
+                    </p>
+                  </div>
+
                   <div className='instructions'>
-                    <p>For each mystery, we say: </p>
+                    <h3>For each mystery, we say: </h3>
                     <OurFather />
                     <TenHailMary />
                     <GloryBe />
                     <FatimaPrayer />
-                    <div className='flex-container'>
-                      <div>
-                        <button onClick={this.previousMystery}>Previous</button>
+                    <div className='button-flex-container'>
+                      <div className='button-container'>
+                        <button
+                          onClick={this.previousMystery}
+                          style={this.hidePreviousbutton()}
+                        >
+                          <i class='fas fa-chevron-circle-left'></i>Previous
+                        </button>
                       </div>
-                      <div>
-                        <button onClick={this.nextMystery}>Next</button>
+                      <div className='button-container'>
+                        <button onClick={this.nextMystery}>
+                          Next<i class='fas fa-chevron-circle-right'></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -128,23 +153,33 @@ export default class SwitchMysteries extends Component {
             case 4:
               return (
                 <div className='mystery-container mtb-20px'>
-                  <h1>{todaysMystery.mysteryName} Mystery</h1>
-                  <p>
-                    The fourth {todaysMystery.mysteryName} mystery is the{' '}
-                    {todaysMystery.fourthMystery}.
-                  </p>
+                  <div className='mystery-header'>
+                    <h1>{todaysMystery.mysteryName} Mystery</h1>
+                    <p>
+                      The fourth {todaysMystery.mysteryName} mystery is the{' '}
+                      {todaysMystery.fourthMystery}.
+                    </p>
+                  </div>
+
                   <div className='instructions'>
-                    <p>For each mystery, we say: </p>
+                    <h3>For each mystery, we say: </h3>
                     <OurFather />
                     <TenHailMary />
                     <GloryBe />
                     <FatimaPrayer />
-                    <div className='flex-container'>
-                      <div>
-                        <button onClick={this.previousMystery}>Previous</button>
+                    <div className='button-flex-container'>
+                      <div className='button-container'>
+                        <button
+                          onClick={this.previousMystery}
+                          style={this.hidePreviousbutton()}
+                        >
+                          <i class='fas fa-chevron-circle-left'></i>Previous
+                        </button>
                       </div>
-                      <div>
-                        <button onClick={this.nextMystery}>Next</button>
+                      <div className='button-container'>
+                        <button onClick={this.nextMystery}>
+                          Next<i class='fas fa-chevron-circle-right'></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -154,28 +189,36 @@ export default class SwitchMysteries extends Component {
             case 5:
               return (
                 <div className='mystery-container mtb-20px'>
-                  <h1>{todaysMystery.mysteryName} Mystery</h1>
-                  <p>
-                    The fifth {todaysMystery.mysteryName} mystery is the{' '}
-                    {todaysMystery.fifthMystery}.
-                  </p>
+                  <div className='mystery-header'>
+                    <h1>{todaysMystery.mysteryName} Mystery</h1>
+                    <p>
+                      The fifth {todaysMystery.mysteryName} mystery is the{' '}
+                      {todaysMystery.fifthMystery}.
+                    </p>
+                  </div>
+
                   <div className='instructions'>
-                    <p>For each mystery, we say: </p>
+                    <h3>For each mystery, we say: </h3>
                     <OurFather />
                     <TenHailMary />
                     <GloryBe />
                     <FatimaPrayer />
                     <HailHolyQueen />
-                    <div className='flex-container'>
-                      <div>
-                        <button onClick={this.previousMystery}>Previous</button>
+                    <div className='button-flex-container'>
+                      <div className='button-container'>
+                        <button
+                          onClick={this.previousMystery}
+                          style={this.hidePreviousbutton()}
+                        >
+                          <i class='fas fa-chevron-circle-left'></i>Previous
+                        </button>
                       </div>
-                      <div>
+                      <div className='button-container'>
                         <button
                           onClick={this.nextMystery}
                           style={this.hideNextbutton()}
                         >
-                          Next
+                          Next<i class='fas fa-chevron-circle-right'></i>
                         </button>
                       </div>
                     </div>

@@ -114,9 +114,18 @@ export class Provider extends Component {
     }
   }
 
+  sayHello = name => {
+    console.log('Hello world');
+  };
+
+  // onSubmit = e => {
+  //   e.preventDefault();
+  //   console.log('submit button was clicked');
+  // };
+
   render() {
     return (
-      <Context.Provider value={this.state}>
+      <Context.Provider value={{ ...this.state, sayHello: this.sayHello() }}>
         {this.props.children}
       </Context.Provider>
     );
