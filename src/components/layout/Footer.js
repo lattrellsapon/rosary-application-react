@@ -6,8 +6,13 @@ export default function Footer() {
     <footer className='text-center'>
       <h3>
         Website by{' '}
-        <Link to='https://www.treezywebdesign.com/' className='treezy'>Treezy Web Design.
-        </Link>
+        <a
+          href='https://www.treezywebdesign.com/'
+          target='_blank'
+          className='treezy'
+        >
+          Treezy Web Design.
+        </a>
       </h3>
     </footer>
   );
