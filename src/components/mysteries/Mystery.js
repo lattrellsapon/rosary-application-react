@@ -30,17 +30,31 @@ export default class Mystery extends Component {
     return (
       <Consumer>
         {value => {
-          const {
-            signOfTheCross,
-            apostlesCreed,
-            ourFather,
-            hailMary,
-            gloryBe,
-            fatimaPrayer,
-            hailHolyQueen,
-            todaysMystery,
-            todaysDay
-          } = value;
+          const { signOfTheCross, apostlesCreed, mysteries } = value;
+          let { todaysDay, todaysMystery } = value;
+          switch (todaysDay) {
+            case 'Sunday':
+              todaysMystery = mysteries[2];
+              break;
+            case 'Monday':
+              todaysMystery = mysteries[0];
+              break;
+            case 'Tuesday':
+              todaysMystery = mysteries[1];
+              break;
+            case 'Wednesday':
+              todaysMystery = mysteries[2];
+              break;
+            case 'Thursday':
+              todaysMystery = mysteries[3];
+              break;
+            case 'Friday':
+              todaysMystery = mysteries[1];
+              break;
+            case 'Saturday':
+              todaysMystery = mysteries[0];
+              break;
+          }
           return (
             <div className='text-center'>
               <h3>

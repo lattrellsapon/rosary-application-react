@@ -1,9 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import TodaysMysteries from './components/mysteries/TodaysMysteries';
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import About from './components/pages/About';
+import Footer from './components/layout/Footer';
 
 import './App.css';
 
@@ -18,8 +19,10 @@ function App() {
           <div className='container'>
             <Switch>
               <Route exact path='/' component={TodaysMysteries} />
+              <Route exact path='/about' component={About} />
             </Switch>
           </div>
+          <Footer />
         </div>
       </Router>
     </Provider>

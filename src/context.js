@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 
 const Context = React.createContext();
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE MYSTERY':
+      return {
+        ...state,
+        todaysDay: action.payload
+      };
+  }
+};
+
 export class Provider extends Component {
   state = {
+    dispatch: action => this.setState(state => reducer(state, action)),
     signOfTheCross:
       'In the name of the Father, and of the Son, and of the Holy Spirt. Amen',
     apostlesCreed:
@@ -114,18 +125,9 @@ export class Provider extends Component {
     }
   }
 
-  sayHello = name => {
-    console.log('Hello world');
-  };
-
-  // onSubmit = e => {
-  //   e.preventDefault();
-  //   console.log('submit button was clicked');
-  // };
-
   render() {
     return (
-      <Context.Provider value={{ ...this.state, sayHello: this.sayHello() }}>
+      <Context.Provider value={this.state}>
         {this.props.children}
       </Context.Provider>
     );

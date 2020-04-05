@@ -9,16 +9,6 @@ export default class TodaysMysteries extends Component {
     return (
       <Consumer>
         {value => {
-          const {
-            apostlesCreed,
-            ourFather,
-            hailMary,
-            gloryBe,
-            fatimaPrayer,
-            hailHolyQueen,
-            todaysMystery,
-            todaysDay
-          } = value;
           return (
             <div className='text-center'>
               <Mystery />

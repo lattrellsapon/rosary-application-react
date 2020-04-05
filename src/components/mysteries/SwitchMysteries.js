@@ -40,7 +40,24 @@ export default class SwitchMysteries extends Component {
     return (
       <Consumer>
         {value => {
-          const { todaysMystery } = value;
+          let { todaysMystery, todaysDay, mysteries } = value;
+
+          if (todaysDay === 'Sunday') {
+            todaysMystery = mysteries[2];
+          } else if (todaysDay === 'Monday') {
+            todaysMystery = mysteries[0];
+          } else if (todaysDay === 'Tuesday') {
+            todaysMystery = mysteries[1];
+          } else if (todaysDay === 'Wednesday') {
+            todaysMystery = mysteries[2];
+          } else if (todaysDay === 'Thursday') {
+            todaysMystery = mysteries[3];
+          } else if (todaysDay === 'Friday') {
+            todaysMystery = mysteries[1];
+          } else if (todaysDay === 'Saturday') {
+            todaysMystery = mysteries[0];
+          }
+
           switch (this.state.currentMystery) {
             case 1:
               return (
@@ -226,6 +243,12 @@ export default class SwitchMysteries extends Component {
                 </div>
               );
               break;
+            default:
+              return (
+                <div>
+                  <h1>Looks like you are lost.</h1>
+                </div>
+              );
           }
         }}
       </Consumer>

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
 
+import ErrorMessage from '../error/ErrorMessage';
+
 export default class Update extends Component {
   state = {
-    newDay: ''
+    newDay: '',
+    isError: false
   };
 
   onChange = e => {
@@ -12,27 +15,66 @@ export default class Update extends Component {
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (dispatch, e) => {
     e.preventDefault();
-    console.log('submit button was clicked');
+    const checkDay = e.target.newDay.value;
+    if (
+      checkDay === 'Sunday' ||
+      checkDay === 'Monday' ||
+      checkDay === 'Tuesday' ||
+      checkDay === 'Wednesday' ||
+      checkDay === 'Thursday' ||
+      checkDay === 'Friday' ||
+      checkDay === 'Saturday'
+    ) {
+      dispatch({
+        type: 'UPDATE MYSTERY',
+        payload: this.state.newDay
+      });
+      this.setState({
+        newDay: '',
+        isError: false
+      });
+    } else {
+      this.setState({
+        isError: true
+      });
+    }
+  };
+
+  hideError = () => {
+    if (this.state.isError) {
+      return {
+        display: 'block'
+      };
+    } else {
+      return {
+        display: 'none'
+      };
+    }
   };
 
   render() {
     return (
       <Consumer>
         {value => {
-          const { todaysDay, sayHello } = value;
+          const { todaysDay, dispatch } = value;
           return (
             <div className='form-container'>
-              <form onSubmit={this.onSubmit}>
+              <div style={this.hideError()}>
+                <ErrorMessage />
+              </div>
+              <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                 <input
                   type='text'
-                  placeholder={todaysDay}
+                  placeholder={`Current Day: ${todaysDay}`}
                   name='newDay'
                   value={this.state.newDay}
                   onChange={this.onChange}
+                  className='todays-day'
+                  required
                 />
-                <input type='submit' value='Update' />
+                <input type='submit' value='Update' className='submit-button' />
               </form>
             </div>
           );

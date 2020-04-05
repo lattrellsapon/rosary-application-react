@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav>
-      <div className='flex-container'>
+      <div className='flex-container text-center'>
         <div className='flex-box'>
           <h1>Holy Rosary</h1>
         </div>
@@ -17,8 +18,16 @@ const Navbar = () => {
 
         <div className='flex-box'>
           <ul>
-            <li>Home</li>
-            <li>About</li>
+            <li>
+              <Link to='/' className='link'>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to='/about' className='link'>
+                About
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
