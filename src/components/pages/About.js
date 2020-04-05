@@ -8,19 +8,18 @@ export default function About() {
       <div className='image-container'>
         <img src={rosary} alt='Holy Rosary' />
       </div>
-      <p>
-        This simple application was made for those people who wants to start
-        praying the Rosary more often. In the beginning, the Rosary could be
-        overwhelming for some people. People may find it hard to memorise the
-        beautiful mysteries of the Rosary. Moreover, there are also some people
-        who does not know the Our Father, Hail Mary, and Glory Be off by heart.
+      <p className='mtb-20px'>
+        This simple application was created to assist those who want to pray the
+        Rosary more often, or for those who simply want to start this beautiful
+        devotion.
       </p>
-      <p>
-        If you are that someone who is struggling with praying the Rosary,
-        hopefully this application can help make it easier for you to learn it.
-        This application is user friendly and easy to use. What are you waiting
-        for? Get to praying and learning!{' '}
+      <p className='mtb-20px'>
+        Initially, some may find the Rosary overwhelming due to the different
+        prayers and mysteries involved. However, this application is user
+        friendly and easy to use, therefore making it an ideal supplement for
+        your Rosary journey.
       </p>
+      <p className='mtb-20px'>Happy praying and learning!</p>
     </div>
   );
 }
